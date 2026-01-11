@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import CursorMain from "@/components/cursor";
 import GoBack from "@/components/go-back";
+import Projects from "@/components/projects";
 import PageTransition from "@/components/transition";
 
 const geistSans = Geist({
@@ -35,6 +36,7 @@ export default function RootLayout({
 
         <PageTransition>
           <GoBack />
+          <Projects />
 
           <ThemeProvider
             attribute="class"

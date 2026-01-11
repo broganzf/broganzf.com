@@ -67,7 +67,7 @@ export default function CursorMain() {
     window.addEventListener("mousemove", mMouseMove);
     document.addEventListener("click", mClick);
 
-    const links = document.querySelectorAll("a");
+    const links = document.querySelectorAll("a, button, img, input");
     links.forEach((link) => {
       link.addEventListener("mouseenter", mMouseOver);
       link.addEventListener("mouseleave", mMouseLeave);

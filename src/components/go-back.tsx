@@ -2,7 +2,7 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import { motion, useAnimation } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useTransition } from "./transition";
 import Prefetch from "./prefetch";
 
@@ -17,15 +17,15 @@ export default function GoBack() {
       controls.start({
         opacity: 1,
         pointerEvents: "auto",
-        x: 0,
-        transition: { duration: 0.3 },
+        rotate: 0,
+        transition: { duration: 0.4, ease: "backOut" },
       });
     } else {
       controls.start({
         opacity: 0,
         pointerEvents: "none",
-        x: -10,
-        transition: { duration: 0 },
+        rotate: -180,
+        transition: { duration: 0.3 },
       });
     }
   }, [pathname, controls]);
@@ -33,7 +33,6 @@ export default function GoBack() {
   return (
     <Prefetch link="/">
       <motion.a
-        //   onClick={() => router.back()}
         onClick={() => {
           transition?.navigateWithTransition(() => {
             if (window.history.length <= 1) {
@@ -48,9 +47,9 @@ export default function GoBack() {
             }
           });
         }}
-        initial={{ opacity: 0, x: -10, pointerEvents: "none" }}
+        initial={{ opacity: 0, rotate: -180, pointerEvents: "none" }}
         animate={controls}
-        className="fixed top-4 left-4 p-2 rounded-md shadow border hover:bg-zinc-900 border-zinc-800 hover:border-zinc-700 transition-colors duration-300"
+        className="fixed top-4 left-4 p-2 rounded-md shadow border hover:bg-zinc-900 border-zinc-800 hover:border-zinc-700 transition-colors duration-300 focus:outline-none focus:ring-0 z-50"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

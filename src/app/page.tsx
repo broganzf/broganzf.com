@@ -24,21 +24,6 @@ export default function Home() {
 
   return (
     <div className="flex flex-col justify-center items-center h-screen gap-4">
-      <Prefetch link={"/resources"}>
-        <a
-          href="/resources"
-          onClick={(e) => {
-            e.preventDefault(); // dont auto redirect due to the href
-            transition?.navigateWithTransition(() => {
-              router.push("/resources");
-            });
-          }}
-          className="border border-zinc-800 hover:border-zinc-700 px-15 py-1 rounded-md hover:bg-zinc-800 transition-colors duration-400 ease-in-out text-muted-foreground text-sm"
-        >
-          /resources
-        </a>
-      </Prefetch>
-
       <HoverCard>
         <div className="flex items-center gap-3">
           <HoverCardTrigger asChild>
@@ -136,36 +121,6 @@ export default function Home() {
           </div>
         </HoverCardContent>
       </HoverCard>
-
-      <Prefetch link={"/github"}>
-        <a
-          href="/github"
-          onClick={(e) => {
-            e.preventDefault(); // dont auto redirect due to the href
-            transition?.navigateWithTransition(() => {
-              router.push("/github");
-            });
-          }}
-          className="border border-zinc-800 hover:border-zinc-700 px-15 py-1 rounded-md hover:bg-zinc-800 transition-colors duration-400 ease-in-out text-muted-foreground text-sm"
-        >
-          github to email
-        </a>
-      </Prefetch>
-
-      <Prefetch link={"/calendar"}>
-        <a
-          href="/calendar"
-          onClick={(e) => {
-            e.preventDefault(); // dont auto redirect due to the href
-            transition?.navigateWithTransition(() => {
-              router.push("/calendar");
-            });
-          }}
-          className="border border-zinc-800 hover:border-zinc-700 px-15 py-1 rounded-md hover:bg-zinc-800 transition-colors duration-400 ease-in-out text-muted-foreground text-sm"
-        >
-          calendar
-        </a>
-      </Prefetch>
     </div>
   );
 }

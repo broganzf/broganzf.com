@@ -46,6 +46,10 @@ export default function Home() {
   const totalDots = view === "year" ? progress.totalDaysInYear : 7;
   const columnCount =
     view === "year" ? Math.ceil(Math.sqrt(progress.totalDaysInYear)) : 7;
+  const columns =
+    view === "year"
+      ? "grid-cols-15 md:grid-cols-20 lg:grid-cols-20"
+      : "grid-cols-7";
 
   useEffect(() => {
     const timer = setTimeout(
@@ -79,12 +83,7 @@ export default function Home() {
   return (
     <>
       <div className="bg-zinc-950 flex flex-col items-center justify-center min-h-screen">
-        <div
-          className="grid gap-3"
-          style={{
-            gridTemplateColumns: `repeat(${columnCount}, minmax(0, 1fr))`,
-          }}
-        >
+        <div className={`grid gap-3 max-w-2xl mx-auto ${columns}`}>
           {Array.from({ length: totalDots }).map((_, index) => {
             const dayNumber = index + 1;
             const isPast = dayNumber < currentVal;
@@ -125,7 +124,7 @@ export default function Home() {
       <div className="fixed bottom-10 left-0 right-0 flex justify-center gap-2">
         <div
           className={`
-      justify-center items-center flex border border-zinc-800 hover:border-zinc-700 px-2 py-2 rounded-full transition-all ease-in-out duration-1000
+      justify-center items-center flex border border-zinc-800 hover:border-zinc-700 px-2 py-2 rounded-full transition-all ease-in-out duration-1000 bg-zinc-950
       ${
         loading
           ? "opacity-0 scale-95"
