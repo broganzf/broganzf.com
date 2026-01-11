@@ -25,6 +25,7 @@ export default function Projects() {
         opacity: 1,
         pointerEvents: "auto",
         rotate: 0,
+        x: 10,
         transition: { duration: 0.4, ease: "backOut" },
       });
     } else {
@@ -32,6 +33,7 @@ export default function Projects() {
         opacity: 0,
         pointerEvents: "none",
         rotate: 180,
+        x: 10,
         transition: { duration: 0.3 },
       });
     }
@@ -47,7 +49,7 @@ export default function Projects() {
     <DropdownMenu open={open} onOpenChange={setOpen} modal={false}>
       <DropdownMenuTrigger asChild>
         <motion.button
-          initial={{ opacity: 0, rotate: 180, pointerEvents: "none" }}
+          initial={{ opacity: 0, rotate: 180, x: 10, pointerEvents: "none" }}
           animate={controls}
           className="fixed top-4 left-2 p-2 rounded-md shadow border hover:bg-zinc-900 border-zinc-800 hover:border-zinc-700 transition-colors duration-300 focus:outline-none focus:ring-0 z-50"
         >
