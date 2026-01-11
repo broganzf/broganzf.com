@@ -13,6 +13,9 @@ const sites = [
   "https://vercel.com",
   "https://ui.shadcn.com",
   "https://tailwindcss.com",
+  "https://nextjs.org/docs",
+  "https://heroui.com/docs/guide/introduction",
+  "https://kibo-ui.com/docs",
 ];
 
 export default async function Home() {
