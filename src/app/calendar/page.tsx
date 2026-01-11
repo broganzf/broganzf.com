@@ -70,7 +70,7 @@ export default function Home() {
   );
 
   const currentVal =
-    view === "year" ? progress.currentDayOfYear : progress.currentDayOfWeek + 1;
+    view === "year" ? progress.currentDayOfYear : progress.currentDayOfWeek;
   const totalVal =
     view === "year" ? progress.totalDaysInYear : progress.daysInWeek;
   const percentage = ((currentVal / totalVal) * 100).toFixed(1);
