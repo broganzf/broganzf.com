@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname, useRouter } from "next/navigation";
-import { motion, scale, useAnimation } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useTransition } from "./transition";
 import Prefetch from "./prefetch";

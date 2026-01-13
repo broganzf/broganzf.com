@@ -3,7 +3,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { Tooltip } from "@heroui/tooltip";
 import { Separator } from "@/components/ui/separator";
-import * as motion from "motion/react-client";
+import { motion } from "framer-motion";
 
 type ViewMode = "week" | "year";
 

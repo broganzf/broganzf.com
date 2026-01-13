@@ -8,7 +8,7 @@ import {
 import Image from "next/image";
 import avatar from "../public/avatar.png";
 import Link from "next/link";
-import * as motion from "motion/react-client";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const data = {
