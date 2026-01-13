@@ -19,6 +19,12 @@ export default function Projects() {
   const transition = useTransition();
   const [open, setOpen] = useState(false);
 
+  const pages = [
+    { path: "/calendar", label: "calendar" },
+    { path: "/github", label: "github to email" },
+    { path: "/resources", label: "resources" },
+  ];
+
   useEffect(() => {
     if (pathname == "/") {
       controls.start({
@@ -51,6 +57,8 @@ export default function Projects() {
         <motion.button
           initial={{ opacity: 0, rotate: 180, x: 10, pointerEvents: "none" }}
           animate={controls}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
           className="fixed top-4 left-2 p-2 rounded-md shadow border hover:bg-zinc-900 border-zinc-800 hover:border-zinc-700 transition-colors duration-300 focus:outline-none focus:ring-0 z-50"
         >
           <svg
@@ -77,38 +85,22 @@ export default function Projects() {
         align="start"
         sideOffset={10}
       >
-        <Prefetch link={"/calendar"}>
-          <DropdownMenuItem
-            onClick={(e) => {
-              e.preventDefault();
-              handleNav("/calendar");
-            }}
-          >
-            calendar
-          </DropdownMenuItem>
-        </Prefetch>
-
-        <Prefetch link={"/github"}>
-          <DropdownMenuItem
-            onClick={(e) => {
-              e.preventDefault();
-              handleNav("/github");
-            }}
-          >
-            github to email
-          </DropdownMenuItem>
-        </Prefetch>
-
-        <Prefetch link={"/resources"}>
-          <DropdownMenuItem
-            onClick={(e) => {
-              e.preventDefault();
-              handleNav("/resources");
-            }}
-          >
-            resources
-          </DropdownMenuItem>
-        </Prefetch>
+        {pages.map((page, i) => {
+          return (
+            <Prefetch link={page.path} key={i}>
+              <motion.div key={i} whileHover={{ scale: 0.95 }}>
+                <DropdownMenuItem
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNav(page.path);
+                  }}
+                >
+                  {page.label}
+                </DropdownMenuItem>
+              </motion.div>
+            </Prefetch>
+          );
+        })}
       </DropdownMenuContent>
     </DropdownMenu>
   );

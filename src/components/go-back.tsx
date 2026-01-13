@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname, useRouter } from "next/navigation";
-import { motion, useAnimation } from "framer-motion";
+import { motion, scale, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useTransition } from "./transition";
 import Prefetch from "./prefetch";
@@ -49,6 +49,8 @@ export default function GoBack() {
         }}
         initial={{ opacity: 0, rotate: -180, pointerEvents: "none" }}
         animate={controls}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
         className="fixed top-4 left-4 p-2 rounded-md shadow border hover:bg-zinc-900 border-zinc-800 hover:border-zinc-700 transition-colors duration-300 focus:outline-none focus:ring-0 z-50"
       >
         <svg
