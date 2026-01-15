@@ -22,6 +22,7 @@ export default function Projects() {
   const pages = [
     { path: "/calendar", label: "calendar" },
     { path: "/github", label: "github to email" },
+    { path: "/cool", label: "cool media" },
     { path: "/resources", label: "resources" },
   ];
 
