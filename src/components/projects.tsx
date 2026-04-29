@@ -23,7 +23,7 @@ export default function Projects() {
     { path: "/calendar", label: "calendar" },
     { path: "/github", label: "github to email" },
     // { path: "/cool", label: "cool media" },
-    { path: "/resources", label: "resources" },
+    // { path: "/resources", label: "resources" }, // too hard to keep updated
   ];
 
   useEffect(() => {
